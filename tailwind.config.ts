@@ -12,6 +12,9 @@ export default {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+      fontFamily: {
+        dots: ['"Raleway Dots"', "cursive"],  // Add your font here
+      },
     },
   },
   plugins: [],
