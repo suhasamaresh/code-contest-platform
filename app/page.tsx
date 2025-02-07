@@ -40,6 +40,20 @@ export default function Page() {
 
   return (
     <div className="min-h-screen bg-neutral-900 text-white flex items-center justify-center p-8 font-poppins">
+      <style jsx>{`
+        @keyframes blink {
+          0%,
+          100% {
+            stroke-opacity: 1;
+          }
+          50% {
+            stroke-opacity: 0;
+          }
+        }
+        .blink {
+          animation: blink 2.5s infinite;
+        }
+      `}</style>
       <div className="max-w-6xl w-full grid grid-cols-1 md:grid-cols-2 gap-8">
         {/* Left Section: Introduction */}
         <div className="flex flex-col justify-center">
@@ -61,6 +75,8 @@ export default function Page() {
         {/* Right Section: Card with SVG */}
         <div className="flex items-center justify-center" >
           <div className="bg-neutral-800 border border-neutral-700 hover:border-neutral-600 rounded-lg p-6 shadow-lg w-full max-w-md">
+            <div className="flex items-center justify-between mb-4">
+              <div className="flex flex-col">
             <h2 className="text-2xl font-bold text-neutral-200 mb-4">
               Our Colossal Vision
             </h2>
@@ -69,6 +85,38 @@ export default function Page() {
               modern innovation. Let the energy of history inspire your
               breakthrough.
             </p>
+            </div>
+            {/* Hacker SVG */}
+            <div>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="64px"
+                  height="64px"
+                  viewBox="0 0 48 48"
+                >
+                  <title>hacker</title>
+                  <g id="Layer_2" data-name="Layer 2">
+                    <g id="invisible_box" data-name="invisible box">
+                      <rect width="48" height="48" fill="none" />
+                    </g>
+                    <g
+                      id="Q3_icons"
+                      data-name="Q3 icons"
+                      className="blink"
+                      fill="none"
+                      stroke="#10b981"
+                      strokeWidth="1.5"
+                    >
+                      <g>
+                        <path d="M39.2,16h0L37.3,6.2A4,4,0,0,0,33.4,3H29.1a3.9,3.9,0,0,0-3.4,1.9L24,7.8,22.3,4.9A3.9,3.9,0,0,0,18.9,3H14.6a4,4,0,0,0-3.9,3.2L8.7,16C4.6,17.2,2,19,2,21s1.9,3.2,5,4.4V40.2a1.9,1.9,0,0,0,1.5,1.9l12,2.9a2.4,2.4,0,0,0,2.1-.8L24,42.5l1.4,1.7A2.1,2.1,0,0,0,27,45h.5l12-2.9A1.9,1.9,0,0,0,41,40.2V25.4c3.1-1.2,5-2.7,5-4.4S43.4,17.2,39.2,16ZM37,38.6l-9.2,2.2L25.6,38a2.2,2.2,0,0,0-3.2,0l-2.2,2.8L11,38.6v-12A55,55,0,0,0,24,28a55,55,0,0,0,13-1.4ZM24,24c-8.8,0-14.8-1.7-17.1-3a16.5,16.5,0,0,1,3-1.2l2.3-.7.5-2.4L14.6,7h4.3l1.7,2.8a3.9,3.9,0,0,0,6.8,0L29.1,7h4.3l1.9,9.7.5,2.4,2.3.7a16.5,16.5,0,0,1,3,1.2C38.8,22.3,32.8,24,24,24Z"/>
+                        <path d="M17,32c-2,0-4-.1-4,1s2,3,4,3,4-.9,4-2S19,32,17,32Z"/>
+                        <path d="M31,36c2,0,4-1.9,4-3s-2-1-4-1-4,.9-4,2S29,36,31,36Z"/>
+                      </g>
+                    </g>
+                  </g>
+                </svg>
+              </div>
+            </div>
             <div className="flex items-center justify-center" ref = {cardsRef} onMouseMove = {event => handleMouseMove(event)} onMouseEnter = {() => setMouseOnCard(true)} onMouseLeave = {() => setMouseOnCard(false)}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
